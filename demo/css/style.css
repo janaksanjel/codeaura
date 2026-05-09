@@ -1,0 +1,116 @@
+#code-output {
+* {
+.btn-primary {
+.demo-section {
+.dot {
+.dot.green  { background: #28c840; } /* green maximize */
+.dot.red    { background: #ff5f57; } /* red close */
+.dot.yellow { background: #febc2e; } /* yellow minimize */
+.editor-header {
+.editor-mock {
+.hero h1 {
+.hero p {
+.hero {
+.logo {
+.site-header {
+/* ============================================
+/* CSS reset */
+/* body styles */
+/* code output area */
+/* demo section */
+/* editor header dots */
+/* editor mock */
+/* footer */
+/* header */
+/* hero heading */
+/* hero paragraph */
+/* hero section */
+/* logo */
+/* nav hover */
+/* nav links */
+/* primary button */
+/* traffic light dots */
+   ============================================ */
+   CodeAura Demo Stylesheet
+   Main styles for the demo page
+  align-items: center;     /* vertical center */
+  background: #0d0d1a;  /* dark background */
+  background: #1a1a2e;     /* slightly lighter bg */
+  background: #1e1e2e;     /* dark editor bg */
+  background: #2a2a3e;     /* slightly lighter */
+  background: linear-gradient(135deg, #1a1a2e, #0d0d1a); /* gradient */
+  background: linear-gradient(90deg, #7B2FFF, #00D4FF); /* gradient */
+body {
+  border-bottom: 1px solid #7B2FFF; /* purple border */
+  border-radius: 4px;      /* rounded corners */
+  border-radius: 50%;      /* circle */
+  border-radius: 8px;      /* rounded */
+  border-top: 1px solid #222233; /* subtle border */
+  border: 1px solid #333355; /* subtle border */
+  border: none;            /* no border */
+  box-sizing: border-box; /* consistent box model */
+  color: #00D4FF; /* cyan on hover */
+  color: #555577;          /* muted purple-grey */
+  color: #9B6DFF;          /* purple */
+  color: #9B6DFF;          /* purple */
+  color: #aaaaaa;          /* muted text */
+  color: #cccccc;          /* light grey */
+  color: #cccccc;          /* light text */
+  color: #eeeeee;        /* light text */
+  color: white;            /* white text */
+  cursor: pointer;         /* pointer cursor */
+  display: flex;           /* flex layout */
+  display: flex;           /* flex row */
+  font-family: 'JetBrains Mono', monospace; /* monospace font */
+  font-family: inherit;    /* inherit font */
+  font-size: 0.85rem;      /* smaller code font */
+  font-size: 1.1rem;       /* slightly larger */
+  font-size: 1.4rem;       /* larger text */
+  font-size: 1rem;         /* font size */
+  font-size: 2.5rem;       /* large heading */
+  font-weight: bold;       /* bold */
+footer {
+  gap: 8px;                /* gap between dots */
+  height: 12px;            /* dot size */
+  justify-content: space-between; /* space items */
+  line-height: 1.6;      /* readable line height */
+  margin-bottom: 16px;     /* spacing below */
+  margin-bottom: 32px;     /* spacing below */
+  margin-left: 24px;       /* spacing between links */
+  margin: 0 auto;          /* center */
+  margin: 0;       /* remove default margin */
+  max-width: 900px;        /* max width */
+  min-height: 200px;       /* minimum height */
+nav a {
+nav a:hover {
+  overflow: hidden;        /* clip content */
+  padding: 0;      /* remove default padding */
+  padding: 10px 16px;      /* padding */
+  padding: 12px 32px;      /* button padding */
+  padding: 16px 32px;      /* spacing */
+  padding: 24px;           /* inner padding */
+  padding: 24px;           /* padding */
+  padding: 48px 32px;      /* section padding */
+  padding: 80px 32px;      /* large padding */
+  text-align: center;      /* center */
+  text-align: center;      /* center content */
+  text-decoration: none;   /* no underline */
+  transition: color 0.2s;  /* smooth hover */
+  white-space: pre-wrap;   /* wrap long lines */
+  width: 12px;             /* dot size */
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}

@@ -1,0 +1,23 @@
+package com.codeaura.forge.actions
+
+import com.codeaura.forge.engine.CommentRemover
+import com.codeaura.forge.settings.FileConfigRegistry
+import com.intellij.openapi.actionSystem.AnAction
+import com.intellij.openapi.actionSystem.AnActionEvent
+import com.intellij.openapi.actionSystem.CommonDataKeys
+import com.intellij.openapi.application.ApplicationManager
+import com.intellij.openapi.command.WriteCommandAction
+
+class RemoveCommentsAction : AnAction() {
+    override fun actionPerformed(e: AnActionEvent) {
+        val project  = e.project ?: return
+        val editor   = e.getData(CommonDataKeys.EDITOR) ?: return
+        val file     = e.getData(CommonDataKeys.VIRTUAL_FILE) ?: return
+        val registry = ApplicationManager.getApplication().getService(FileConfigRegistry::class.java)
+        registry.getOrCreate(file).removeComments = true
+        val result = CommentRemover().process(editor.document.text)
+        WriteCommandAction.runWriteCommandAction(project) {
+            editor.document.setText(result)
+        }
+    }
+}

@@ -1,0 +1,75 @@
+<idea-plugin>
+    <id>com.codeaura.forge</id>
+    <name>CodeAura</name>
+    <vendor email="support@codeaura.dev" url="https://codeaura.dev">CodeAura</vendor>
+    <description>Smart contextual code formatting and cleanup engine with file-specific settings.</description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow
+            id="CodeAura"
+            anchor="right"
+            factoryClass="com.codeaura.forge.ui.CodeAuraToolWindowFactory"
+            icon="/icons/codeaura.svg"
+            canCloseContents="false"/>
+
+        <applicationService
+            serviceImplementation="com.codeaura.forge.settings.FileConfigRegistry"/>
+    </extensions>
+
+    <actions>
+        <action id="CodeAura.FormatFile"
+                class="com.codeaura.forge.actions.FormatFileAction"
+                text="Format File (CodeAura)"
+                description="Format current file using CodeAura pipeline">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt F"/>
+        </action>
+        <action id="CodeAura.ToggleSidebar"
+                class="com.codeaura.forge.actions.ToggleSidebarAction"
+                text="Toggle CodeAura Sidebar"
+                description="Show or hide CodeAura tool window">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt B"/>
+        </action>
+        <action id="CodeAura.RemoveComments"
+                class="com.codeaura.forge.actions.RemoveCommentsAction"
+                text="Remove Comments (CodeAura)"
+                description="Remove all comments from current file">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt C"/>
+        </action>
+        <action id="CodeAura.CleanImports"
+                class="com.codeaura.forge.actions.CleanImportsAction"
+                text="Clean Imports (CodeAura)"
+                description="Clean unused imports from current file">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt I"/>
+        </action>
+        <action id="CodeAura.SortLines"
+                class="com.codeaura.forge.actions.SortLinesAction"
+                text="Sort Lines (CodeAura)"
+                description="Sort all lines alphabetically">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt S"/>
+        </action>
+        <action id="CodeAura.TrimWhitespace"
+                class="com.codeaura.forge.actions.TrimWhitespaceAction"
+                text="Trim Whitespace (CodeAura)"
+                description="Remove trailing whitespace from all lines">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt T"/>
+        </action>
+        <group id="CodeAura.Menu" text="CodeAura" popup="true">
+            <reference ref="CodeAura.FormatFile"/>
+            <reference ref="CodeAura.RemoveComments"/>
+            <reference ref="CodeAura.CleanImports"/>
+            <reference ref="CodeAura.SortLines"/>
+            <reference ref="CodeAura.TrimWhitespace"/>
+            <reference ref="CodeAura.ToggleSidebar"/>
+            <add-to-group group-id="CodeMenu" anchor="last"/>
+        </group>
+    </actions>
+
+    <applicationListeners>
+        <listener
+            class="com.codeaura.forge.listeners.FileOpenListener"
+            topic="com.intellij.openapi.fileEditor.FileEditorManagerListener"/>
+    </applicationListeners>
+</idea-plugin>
